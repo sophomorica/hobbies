@@ -1,2 +1,10 @@
-<h1>Hobbies#edit</h1>
-<p>Find me in app/views/hobbies/edit.html.erb</p>
+<h1>Edit <%@hobby.name%></h1>
+<%= form_with(model: @hobby, local: true) do |f|%>
+  <div class = "field">
+    <%= f.label :name%>
+    <%= f.text_field :name, required: true, placeholder: "like hiking, fishing, dancing etc."%>
+  </div>
+  <%= f.submit class: "btn  teal accent-3 z-depth-5", style: "color:black"%>
+
+<%end%>
+<%=link_to "Back", hobbies_path, class: "btn"%>

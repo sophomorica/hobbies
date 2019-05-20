@@ -1,5 +1,5 @@
 class HobbiesController < ApplicationController
-  before_action :set_hobby, only: [:show, :edit, :update]
+  before_action :set_hobby, only: [:show, :edit, :update, :destroy]
 
   def index
     @hobbies = current_user.hobbies
@@ -33,6 +33,10 @@ class HobbiesController < ApplicationController
     else
       render :edit
     end
+  end
+  def destroy
+    @hobby.destroy
+    redirect_to hobbies_path
   end
 
   private
