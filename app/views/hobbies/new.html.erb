@@ -1,2 +1,9 @@
-<h1>Hobbies#new</h1>
-<p>Find me in app/views/hobbies/new.html.erb</p>
+<h1>Add a Hobby</h1>
+<%= form_with(model: @hobby, local: true) do |f|%>
+  <div class = "field">
+    <%= f.label :name%>
+    <%= f.text_field :name, required: true, placeholder: "like hiking, fishing, dancing etc."%>
+  </div>
+  <%= f.submit class: "btn"%>
+
+<%end%>
