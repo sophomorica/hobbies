@@ -16,8 +16,10 @@ class HobbiesController < ApplicationController
   def create
     @hobby = current_user.hobbies.new(hobby_params)
     if @hobby.save
+      flash[:success] = "#{@hobby.name} is cool"
       redirect_to hobbies_path
     else
+      flash[:error] = "Error #{@hobby.errors.full_messages.join("\n")}"
       render :new
     end
   end
