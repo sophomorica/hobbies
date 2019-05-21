@@ -3,7 +3,18 @@ h1{
   text-shadow: 2px 2px 2px black;
 }
 h2{
+  text-align: center;
   color:blue;
   text-shadow: 2px 2px 2px black;
   font-weight: bolder;
+}
+.button-div{
+  display:flex;
+  justify-content: space-around;
+
+ 
+}
+.hobby-show{
+  display:flex;
+
 }

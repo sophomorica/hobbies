@@ -1,7 +1,6 @@
 <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "btn"%>
 <h2> Welcome <%= current_user.first_name%></h2>
 <hr />
-<%= link_to "Add Hobby", new_hobby_path, class: "btn  cyan accent-3", style: "color:black"%>
 <h3>
 Your Hobbies
 </h3>
@@ -9,10 +8,18 @@ Your Hobbies
 <% @hobbies.each do |hobby|%>
 
 <li>
-  <%=link_to "#{hobby.name}", hobby_path(hobby) %>|
-  <%= link_to "edit", edit_hobby_path(hobby)%>|
-  <%= link_to "delete", hobby_path(hobby), method: :delete%>
+
+  <h3><%=link_to "#{hobby.name}", hobby_path(hobby) %></h3>
+  <br/>
+
+        <%= link_to "edit", edit_hobby_path(hobby)%>|
+        <%= link_to "delete", hobby_path(hobby), method: :delete%>
+
   
   </li>
 <%end%>
 </ul>
+
+<hr />
+
+<%= link_to "Add Hobby", new_hobby_path, class: "btn  cyan accent-3", style: "color:black"%>
